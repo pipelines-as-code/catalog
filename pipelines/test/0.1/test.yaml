@@ -10,6 +10,7 @@ metadata:
     tekton.dev/displayName: "Test Pipeline"
     tekton.dev/platforms: "linux/amd64, linux/arm64"
 spec:
+  description: "A test pipeline to demonstrate that the remote pipeline feature works"
   tasks:
     - name: noop-task
       displayName: Task with no effect
