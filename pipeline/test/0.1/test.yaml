@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1
+kind: Pipeline
+metadata:
+  name: "test"
+spec:
+  tasks:
+    - name: noop-task
+      displayName: Task with no effect
+      taskSpec:
+        steps:
+          - name: noop-task
+            image: registry.access.redhat.com/ubi9/ubi-micro
+            script: |
+              exit 0
