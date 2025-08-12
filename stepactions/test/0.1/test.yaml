@@ -12,10 +12,14 @@ metadata:
 spec:
   description: "A test step action to demonstrate that the remote stepaction feature works"
   image: registry.access.redhat.com/ubi9/ubi-micro
+  env:
+    - name: EXITCODE
+      value: $(params.exit)
   params:
     - name: exit
       type: string
       default: "0"
   script: |
+    set -x
     echo "I am a Step Action!!!"
-    exit $(params.exit)
+    exit ${EXITCODE:-0}
