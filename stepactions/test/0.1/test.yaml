@@ -18,4 +18,4 @@ spec:
       default: "0"
   script: |
     echo "I am a Step Action!!!"
-    exit $(param.exit)
+    exit $(params.exit)
