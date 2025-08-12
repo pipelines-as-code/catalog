@@ -1,0 +1,15 @@
+apiVersion: tekton.dev/v1beta1
+kind: StepAction
+metadata:
+  name: stepaction-test
+  annotations:
+    tekton.dev/pipelines.minVersion: "0.17.0"
+    tekton.dev/tags: test
+    tekton.dev/displayName: "Test Stepaction"
+    tekton.dev/platforms: "linux/amd64, linux/arm64"
+spec:
+  description: "A test step action to demonstrate that the remote stepaction feature works"
+  image: registry.access.redhat.com/ubi9/ubi-micro
+  script: |
+    echo "I am a Step Action!!!"
+    exit 0
